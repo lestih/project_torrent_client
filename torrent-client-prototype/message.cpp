@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-Message Message::Parse(const std::string& messageString){ // изменить
+Message Message::Parse(const std::string& messageString){ //todo
     if(messageString.empty()) return {MessageId::KeepAlive, 0, ""};
     MessageId id = static_cast<MessageId>(messageString[0]);
     std::string payl = messageString.substr(1, messageString.size() - 1);

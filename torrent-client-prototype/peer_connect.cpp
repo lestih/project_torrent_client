@@ -29,7 +29,6 @@ PeerConnect::PeerConnect(const Peer& peer, const TorrentFile &tf, std::string se
  socket_(peer.ip, peer.port, 2000ms, 2000ms), selfPeerId_(selfPeerId), piecesAvailability_(PeerPiecesAvailability(std::string((tf.pieceHashes.size() + 7) / 8, 0))), terminated_(false),
   choked_(true), pieceStorage_(pieceStorage), pendingBlock_(false) {}
 
-// ??? PeerPiecesAvailability
 
 void PeerConnect::Run() {
     while (!terminated_) {
@@ -47,7 +46,7 @@ void PeerConnect::Run() {
             Terminate();
         }
     }
-}// 
+}
 
 void PeerConnect::PerformHandshake() {
     socket_.EstablishConnection();
@@ -85,7 +84,7 @@ void PeerConnect::ReceiveBitfield() {
             piecesAvailability_ = PeerPiecesAvailability(bitfield);
         }
         if(id == MessageId::Have){
-            std::string have = data.substr(1, data.size() - 1); //
+            std::string have = data.substr(1, data.size() - 1);
             size_t ind = BytesToInt(have);
             piecesAvailability_.SetPieceAvailability(ind);
         }
@@ -107,7 +106,6 @@ void PeerConnect::RequestPiece() {
             pieceInProgress_ = pieceStorage_.GetNextPieceToDownload();
         if(piecesAvailability_.IsPieceAvailable(pieceInProgress_->GetIndex())){
             Block* block = pieceInProgress_->FirstMissingBlock();
-            //if(block == nullptr) std::cout << "AAAAAAAAAAAAAA" << std::endl;
             Message msg = Message::Init(MessageId::Request, IntToBytes(pieceInProgress_->GetIndex()) + 
             IntToBytes(block->offset) + IntToBytes(block->length));
 
@@ -120,7 +118,6 @@ void PeerConnect::RequestPiece() {
     return;
 
 }
-//commit
 
 void PeerConnect::Terminate() {
     std::cerr << "Terminate" << std::endl;
@@ -132,13 +129,13 @@ bool PeerConnect::Failed() const {
 }
 
 void PeerConnect::MainLoop() {
-    //throw std::runtime_error("in mainloop");
     while (!terminated_) {
-        // сюда писать код
+
         if (!choked_ && !pendingBlock_) {
             RequestPiece();
         }
-        Message msg = Message::Parse(socket_.ReceiveData()); // ??? есть ли тут choke
+
+        Message msg = Message::Parse(socket_.ReceiveData());
         if(msg.id == MessageId::Choke){
             choked_ = true;
         }
@@ -150,12 +147,10 @@ void PeerConnect::MainLoop() {
             piecesAvailability_.SetPieceAvailability(ind);
         }
         else if(msg.id == MessageId::Piece){
-            pendingBlock_ = false; //
+            pendingBlock_ = false;
             size_t ind = BytesToInt(msg.payload.substr(0, 4));
             size_t begin = BytesToInt(msg.payload.substr(4, 4));
             std::string data = msg.payload.substr(8);
-            //if(pieceInProgress_->GetIndex() != ind) 
-            //std::cout << ind << ' ' << begin / 16384 << std::endl;
 
             pieceInProgress_->SaveBlock(begin, data);
             if(pieceInProgress_->AllBlocksRetrieved()){
@@ -166,7 +161,6 @@ void PeerConnect::MainLoop() {
                 }
                 else{
                     pieceInProgress_->Reset(); // стоит ли делать перевод на след блок
-                    //std::cout << "reset" << std::endl;
                 }
             }
         }

@@ -21,7 +21,6 @@ TcpConnect::~TcpConnect(){
     TcpConnect::CloseConnection();
 }
 
-
 void TcpConnect::EstablishConnection(){
     sock_ = socket(AF_INET, SOCK_STREAM, 0);
     if(sock_ < 0){
@@ -52,9 +51,9 @@ void TcpConnect::EstablishConnection(){
     sockaddr_in addr{};
     addr.sin_family = AF_INET;
     addr.sin_port = htons(port_); 
-    inet_pton(AF_INET, ip_.data(), &addr.sin_addr); //check
+    inet_pton(AF_INET, ip_.data(), &addr.sin_addr);
 
-    int con = connect(sock_, (sockaddr*)&addr, sizeof(addr)); //check
+    int con = connect(sock_, (sockaddr*)&addr, sizeof(addr));
     if(con < 0 && errno != EINPROGRESS){
         close(sock_);
         throw std::runtime_error("ошибка connect");
@@ -72,10 +71,6 @@ void TcpConnect::EstablishConnection(){
         throw std::runtime_error("ошибка select");
     }
     fcntl(sock_, F_SETFL, flag & ~O_NONBLOCK); 
-
-
-
-
 }
 
 void TcpConnect::SendData(const std::string& data) const{
@@ -86,18 +81,7 @@ void TcpConnect::SendData(const std::string& data) const{
 }
 
 std::string TcpConnect::ReceiveData(size_t bufferSize) const{
-    // pollfd fds[1];
-    // fds[0].fd = sock_;
-    // fds[0].events = POLLIN;
-
-    // int con = poll(fds, 1, readTimeout_.count());
-
-    // if(con <= 0){
-    //     close(sock_);
-    //     throw std::runtime_error("poll error");
-    // }
-
-    char buff_num[4]; // check
+    char buff_num[4];
     long long len = bufferSize;
     if(bufferSize == 0){
         int rd = recv(sock_, buff_num, sizeof(buff_num), MSG_WAITALL);
@@ -108,12 +92,6 @@ std::string TcpConnect::ReceiveData(size_t bufferSize) const{
     ans.resize(len);
     char* date = ans.data();
     long long cnt = len;
-    // while(cnt > 0){
-    //     int rd = recv(sock_, date, cnt, MSG_WAITALL);
-    //     if(rd <= 0) throw std::runtime_error("ошибка recv");
-    //     date += rd;
-    //     cnt -= rd;
-    // }
 
     int rd = recv(sock_, date, cnt, MSG_WAITALL);
     if(rd < cnt) throw std::runtime_error("ошибка recv");

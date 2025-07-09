@@ -21,15 +21,15 @@ Piece::Piece(size_t index, size_t length, std::string hash): index_(index), leng
 }
 
 /*
-    * Совпадает ли хеш скачанных данных с ожидаемым
-    */
+* Совпадает ли хеш скачанных данных с ожидаемым
+*/
 bool Piece::HashMatches() const {
     return GetDataHash() == GetHash(); 
 }
 
 /*
-    * Дать указатель на отсутствующий (еще не скачанный и не запрошенный) блок
-    */
+* Дать указатель на отсутствующий (еще не скачанный и не запрошенный) блок
+*/
 Block* Piece::FirstMissingBlock(){
     for(auto& block: blocks_){
         if(block.status == Block::Status::Missing) return &block; // ??? обычный указатель
@@ -52,8 +52,8 @@ bool Piece::AllBlocksRetrieved() const{
 }
 
 /*
-    * Получить скачанные данные для части файла
-    */
+* Получить скачанные данные для части файла
+*/
 std::string Piece::GetData() const{
     std::string all_data;
     for(auto& block: blocks_){

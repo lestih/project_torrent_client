@@ -50,9 +50,9 @@ size_t PieceStorage::TotalPiecesCount() const {
     */
 void PieceStorage::CloseOutputFile(){
     std::lock_guard<std::mutex> lock_(m_);
-        if (outputFile_.is_open()) {
-            outputFile_.close();
-        }
+    if (outputFile_.is_open()) {
+        outputFile_.close();
+    }
 }
 
 /*
@@ -74,6 +74,5 @@ size_t PieceStorage::PiecesInProgressCount() const{
 void PieceStorage::SavePieceToDisk(const PiecePtr& piece){
     outputFile_.seekp(piece_length_ * piece->GetIndex());
     outputFile_.write(piece->GetData().data(), piece->GetData().size());
-
     saved_.push_back(piece->GetIndex());
 }
