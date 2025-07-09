@@ -9,11 +9,6 @@
 #include <sstream>
 
 namespace Bencode {
-
-    /*
-     * В это пространство имен рекомендуется вынести функции для работы с данными в формате bencode.
-     * Этот формат используется в .torrent файлах и в протоколе общения с трекером
-     */
         struct Type;
     
         using Vector = std::vector<Type>;

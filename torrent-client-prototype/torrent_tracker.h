@@ -23,19 +23,30 @@ public:
     TorrentTracker(const std::string& url): url_(url){};
 
     void UpdatePeers(const TorrentFile& tf, std::string peerId, int port){
-        cpr::Response res = cpr::Get(
-            cpr::Url{url_},
-            cpr::Parameters {
-                    {"info_hash", tf.infoHash},
-                    {"peer_id", peerId},
-                    {"port", std::to_string(port)},
-                    {"uploaded", std::to_string(0)},
-                    {"downloaded", std::to_string(0)},
-                    {"left", std::to_string(tf.length)},
-                    {"compact",    std::to_string(1)}
-            },
-            cpr::Timeout{20000}
-        );
+        cpr::Response res;
+        size_t announce_index = 0;
+        do {
+            res = cpr::Get(
+                cpr::Url{url_},
+                cpr::Parameters {
+                        {"info_hash", tf.infoHash},
+                        {"peer_id", peerId},
+                        {"port", std::to_string(port)},
+                        {"uploaded", std::to_string(0)},
+                        {"downloaded", std::to_string(0)},
+                        {"left", std::to_string(tf.length)},
+                        {"compact",    std::to_string(1)}
+                },
+                cpr::Timeout{20000}
+            );
+            if(res.status_code == 0){
+                url_ = tf.announce_list[announce_index++];
+            }
+        } while(res.status_code == 0 && announce_index < f.announce_list.size());
+
+        if(res.status_code == 0){
+            throw std::runtime_error("url error");
+        }
 
         if (res.status_code != 200) {
             throw std::runtime_error("Tracker request failed");
@@ -53,7 +64,6 @@ public:
             ++pos_peers;
         }
         ++pos_peers;
-        //std::cerr << buff << std::endl;
         int num_peers = stoll(num_peers_string);
 
         size_t peer_size = 6;

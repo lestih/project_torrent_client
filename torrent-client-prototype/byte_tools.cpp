@@ -13,7 +13,7 @@ int BytesToInt(std::string_view bytes){
 std::string IntToBytes(int num){
     std::string ans;
     ans.resize(4);
-    for(int i = 3;i>-1;--i){
+    for(int i = 3;i>=0;--i){
         ans[i] = static_cast<char>(num & 0xFF);
         num >>= 8;
     }
@@ -22,12 +22,11 @@ std::string IntToBytes(int num){
 
 std::string CalculateSHA1(const std::string& msg) {
     unsigned char hash[20];
-    SHA1((const unsigned char*)msg.c_str(), msg.size(), hash); // проверить
+    SHA1((const unsigned char*)msg.c_str(), msg.size(), hash);
     std::string hash_ans;
     for(int i = 0;i<20;++i) hash_ans.push_back(hash[i]);
     return hash_ans;
 }
-
 
 std::string HexEncode(const std::string& input){
     static const char hex_digits[] = "0123456789abcdef";

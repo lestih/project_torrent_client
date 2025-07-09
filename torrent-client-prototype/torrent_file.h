@@ -5,6 +5,7 @@
 
 struct TorrentFile {
     std::string announce;
+    std::vector<std::string> announce_list;
     std::string comment;
     std::vector<std::string> pieceHashes;
     size_t pieceLength;
@@ -13,5 +14,4 @@ struct TorrentFile {
     std::string infoHash;
 };
 
-std::string hash_sha1(std::string info_string);
 TorrentFile LoadTorrentFile(const std::string& filename);
