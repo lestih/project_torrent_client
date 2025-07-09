@@ -65,5 +65,6 @@ Bencode::Type Bencode::parser(const std::string& content, long long& pos, long l
             break;
         }
     }
+    
     return result;
 }
