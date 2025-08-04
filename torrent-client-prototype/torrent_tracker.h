@@ -39,10 +39,12 @@ public:
                 },
                 cpr::Timeout{20000}
             );
-            if(res.status_code == 0){
+            if((res.status_code == 0 || res.status_code >= 400) && 
+             (announce_index < tf.announce_list.size())){
                 url_ = tf.announce_list[announce_index++];
             }
-        } while(res.status_code == 0 && announce_index < f.announce_list.size());
+        } while((res.status_code == 0 || res.status_code >= 400) && 
+             (announce_index < tf.announce_list.size()));
 
         if(res.status_code == 0){
             throw std::runtime_error("url error");
@@ -52,7 +54,7 @@ public:
             throw std::runtime_error("Tracker request failed");
         }
 
-        const std::string buff = res.text;
+        const std::string& buff = res.text;
 
 
         int pos_peers = buff.find("peers");
