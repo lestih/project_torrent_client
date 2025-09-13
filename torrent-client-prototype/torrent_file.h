@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+// метаинформация торрент файла
 struct TorrentFile {
     std::string announce;
     std::vector<std::string> announce_list;

@@ -2,69 +2,76 @@
 
 namespace Bencode {
 
-}
-
-Bencode::Type Bencode::parser(const std::string& content, long long& pos, long long& start_hash, long long& finish_hash){
+// Парсер bencode формата
+Type Parser(const std::string& content, int64_t& position, int64_t& start_hash, int64_t& finish_hash){
     Type result;
-    char c = content[pos];
-    switch(c){
-        case 'i':{
-            std::string temp;
-            ++pos;
-            while(content[pos] != 'e'){
-                temp.push_back(content[pos]);
-                ++pos;
+    char current_char = content[position];
+    switch (current_char) {
+        case 'i': {  // int format: i<content>e
+            ++position; 
+            std::string int_string;
+            while (content[position] != 'e') {
+                int_string.push_back(content[position]);
+                ++position;
             }
-            ++pos;
-            result.val = std::stoll(temp);
+
+            result.val = std::stoll(int_string);
+            ++position;
+            break; 
+        }
+        case 'l': {  // list format: l<content>e
+            Vector list;
+            ++position;
+            while (content[position] != 'e') {
+                list.push_back(Parser(content, position, start_hash, finish_hash));
+            }
+
+            result.val = list;
+            ++position;
             break;
         }
-        case 'l':{
-            Vector temp;
-            ++pos;
-            while(content[pos] != 'e'){
-                temp.push_back(parser(content, pos, start_hash, finish_hash));
-            }
-            ++pos;
-            result.val = temp;
-            break;
-        }
-        case 'd':{
-            long long ps;
-            Map map_temp;
-            ++pos;
-            while(content[pos] != 'e'){
-                std::string temp = std::get<std::string>(parser(content, pos, start_hash, finish_hash).val);
-                ps = pos;
-                map_temp[temp] = parser(content, pos, start_hash, finish_hash);
-                if(temp == "info"){
-                    start_hash = ps;
-                    finish_hash = pos - 1;
+        case 'd': {  // dict format: d<key><value>e
+            ++position;
+            Map map;
+            int64_t info_position;  // позиция начала данных info
+            while (content[position] != 'e') {
+                std::string key = std::get<std::string>(Parser(content, position, start_hash, finish_hash).val);
+                info_position = position;
+
+                map[key] = Parser(content, position, start_hash, finish_hash);
+                if (key == "info") {  // если "info", то сохраняем позиции начала и конца
+                    start_hash = info_position;
+                    finish_hash = position - 1;
                 }
             }
-            ++pos;
-            result.val = map_temp;
+
+            result.val = map;
+            ++position;
             break;
         }
-        default:{
-            std::string string_temp;
-            std::string num_temp;
-            long long num;
-            while(content[pos] != ':'){
-                num_temp.push_back(content[pos]);
-                ++pos;
+        default: {  // string format: <length>:<content>
+            std::string string;
+            std::string size_string;
+            int64_t size;
+
+            while (content[position] != ':') {
+                size_string.push_back(content[position]);
+                ++position;
             }
-            num = std::stoll(num_temp);
-            ++pos;
-            while(num != 0){
-                string_temp.push_back(content[pos]);
-                ++pos;
-                --num;
+
+            size = std::stoll(size_string);
+            ++position;
+            while (size != 0) {
+                string.push_back(content[position]);
+                ++position;
+                --size;
             }
-            result.val = string_temp;
+            result.val = string;
             break;
         }
     }
     
     return result;
+}
+
 }
