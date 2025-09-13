@@ -7,6 +7,7 @@
 #include <list>
 #include <map>
 #include <sstream>
+#include <cstdint>
 
 namespace Bencode {
         struct Type;
@@ -15,8 +16,8 @@ namespace Bencode {
         using Map = std::map<std::string, Type>;
     
         struct Type {
-            std::variant<long long, std::string, Vector, Map> val;
+            std::variant<int64_t, std::string, Vector, Map> val;  // используем variant для реализации полиморфизма 
         };
     
-        Type parser(const std::string& content, long long& pos, long long& start_hash, long long& finish_hash);
+        Type Parser(const std::string& content, int64_t& pos, int64_t& start_hash, int64_t& finish_hash);
     }
