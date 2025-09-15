@@ -57,5 +57,5 @@ private:
     const std::string ip_;
     const int port_;
     std::chrono::milliseconds connectTimeout_, readTimeout_;
-    int sock_;
+    int socket_;
 };
