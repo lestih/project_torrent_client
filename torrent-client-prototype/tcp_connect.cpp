@@ -39,16 +39,16 @@ void TcpConnect::EstablishConnection() {
         throw std::runtime_error("fcntl F_GETFL error");
     }
 
-    if (fcntl(socket_, F_SETFL, flags | O_NONBLOCK) == -1) {
+    if (fcntl(socket_, F_SETFL, flags | O_NONBLOCK) == -1) {  // устанавливаем неблокируемый режим
         close(socket_);
         throw std::runtime_error("fcntl F_SETFL error");
     }
 
     struct timeval timeout;      
     timeout.tv_sec = readTimeout_.count() / 1000;
-    timeout.tv_usec = readTimeout_.count() % 1000 * 1000;
+    timeout.tv_usec = readTimeout_.count() % 1000 * 1000;  // задаем интервал времени
     
-    if (setsockopt (socket_, SOL_SOCKET, SO_RCVTIMEO, &timeout,
+    if (setsockopt (socket_, SOL_SOCKET, SO_RCVTIMEO, &timeout,  // задаем опцию для сокета - таймаут для чтения
                 sizeof(timeout)) < 0) {
         close(socket_);
         throw std::runtime_error("setsockopt error");
@@ -59,21 +59,21 @@ void TcpConnect::EstablishConnection() {
     addr.sin_port = htons(port_); 
     inet_pton(AF_INET, ip_.data(), &addr.sin_addr);
 
-    int connect_result = connect(socket_, (sockaddr*)&addr, sizeof(addr));
+    int connect_result = connect(socket_, (sockaddr*)&addr, sizeof(addr));  // подключаемся к серверу 
 
-    if (connect_result < 0 && errno != EINPROGRESS) {  // при EINPROGRESS поток не блокируется
+    if (connect_result < 0 && errno != EINPROGRESS) {  // при EINPROGRESS поток не блокируется (O_NONBLOCK)
         close(socket_);
         throw std::runtime_error("Connect error");
     }
 
-    fd_set write_fds;
+    fd_set write_fds;  // структура для хранения файловых дескрипторов (битовая маска, где каждый бит - файловый дескриптор)
     FD_ZERO(&write_fds);
     FD_SET(socket_, &write_fds);
 
     timeval connect_timeval{};
     connect_timeval.tv_sec = connectTimeout_.count() / 1000;
     connect_timeval.tv_usec = (connectTimeout_.count() % 1000) * 1000;
-    int select_result = select(socket_ + 1, nullptr, &write_fds, nullptr, &connect_timeval);
+    int select_result = select(socket_ + 1, nullptr, &write_fds, nullptr, &connect_timeval);  // блокируется до готовнсти сокета к чтению
 
     if (select_result <= 0) {
         close(socket_);
@@ -86,7 +86,7 @@ void TcpConnect::EstablishConnection() {
 void TcpConnect::SendData(const std::string& data) const {
     const char* data_ = data.data();
     size_t len = data.size();
-    int sent_bytes = send(socket_, data_, len, 0);
+    int sent_bytes = send(socket_, data_, len, 0);  // отправляем данные
     if (sent_bytes <= 0) {
         throw std::runtime_error("ошибка send");
     }
@@ -97,7 +97,7 @@ std::string TcpConnect::ReceiveData(size_t bufferSize) const {
     long long message_length = bufferSize;
 
     if (bufferSize == 0) {
-        int received_bytes = recv(socket_, length_buffer, sizeof(length_buffer), MSG_WAITALL);
+        int received_bytes = recv(socket_, length_buffer, sizeof(length_buffer), MSG_WAITALL);  // получает размер данных
         if (received_bytes < 4) {
             throw std::runtime_error("Receive length error");
         }
@@ -108,7 +108,7 @@ std::string TcpConnect::ReceiveData(size_t bufferSize) const {
     result.resize(message_length);
     char* data = result.data();
 
-    int received_bytes = recv(socket_, data, message_length, MSG_WAITALL);
+    int received_bytes = recv(socket_, data, message_length, MSG_WAITALL);  // получаем данные
     if (received_bytes < message_length) {
         throw std::runtime_error("Receive data error");
     }
