@@ -6,7 +6,7 @@ PieceStorage::PieceStorage(const TorrentFile& tf, const std::filesystem::path& o
   outputDirectory_(outputDirectory), 
   piece_length_(tf.pieceLength) {
     for (size_t i = 0; i < pieces_cnt; ++i) {
-        if (i == tf.pieceHashes.size() - 1 && tf.length % tf.pieceLength != 0) {  // нужно ли это условие tf.length % tf.pieceLength != 0
+        if (i == tf.pieceHashes.size() - 1 && tf.length % tf.pieceLength != 0) {  // нужно ли это условие tf.length % tf.pieceLength != 0 (todo)
             remainPieces_.push(std::make_shared<Piece>(Piece(i, tf.length % tf.pieceLength, tf.pieceHashes[i])));  
         } else {
             remainPieces_.push(std::make_shared<Piece>(Piece(i, tf.pieceLength, tf.pieceHashes[i])));
@@ -52,9 +52,6 @@ size_t PieceStorage::TotalPiecesCount() const {
     return pieces_cnt;
 }
 
-/*
-    * Закрыть поток вывода в файл
-    */
 void PieceStorage::CloseOutputFile(){
     std::lock_guard<std::mutex> lock_(m_);
     if (outputFile_.is_open()) {
@@ -62,17 +59,11 @@ void PieceStorage::CloseOutputFile(){
     }
 }
 
-/*
-    * Отдает список номеров частей файла, которые были сохранены на диск
-    */
 const std::vector<size_t>& PieceStorage::GetPiecesSavedToDiscIndices() const {
     std::lock_guard<std::mutex> lock_(m_);
     return saved_;
 }
 
-/*
-    * Сколько частей файла в данный момент скачивается
-    */
 size_t PieceStorage::PiecesInProgressCount() const {
     std::lock_guard<std::mutex> lock_(m_);
     return TotalPiecesCount() - remainPieces_.size() - saved_.size();
