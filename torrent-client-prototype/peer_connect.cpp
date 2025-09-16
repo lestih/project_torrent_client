@@ -8,26 +8,31 @@
 
 using namespace std::chrono_literals;
 
-PeerPiecesAvailability::PeerPiecesAvailability(){}
+PeerPiecesAvailability::PeerPiecesAvailability() {}
 
-PeerPiecesAvailability::PeerPiecesAvailability(std::string bitfield): bitfield_(bitfield){}
+PeerPiecesAvailability::PeerPiecesAvailability(std::string bitfield) : bitfield_(bitfield) {}
 
-bool PeerPiecesAvailability::IsPieceAvailable(size_t pieceIndex) const{
+bool PeerPiecesAvailability::IsPieceAvailable(size_t pieceIndex) const {
     return bitfield_[pieceIndex / 8] & (1 << (7 - pieceIndex % 8));
 }
 
-void PeerPiecesAvailability::SetPieceAvailability(size_t pieceIndex){
+void PeerPiecesAvailability::SetPieceAvailability(size_t pieceIndex) {
     bitfield_[pieceIndex / 8] |= (1 << (7 - pieceIndex % 8));
 }
 
-size_t PeerPiecesAvailability::Size() const{
+size_t PeerPiecesAvailability::Size() const {
     return 8 * bitfield_.size();
 }
 
 
-PeerConnect::PeerConnect(const Peer& peer, const TorrentFile &tf, std::string selfPeerId, PieceStorage& pieceStorage):tf_(tf),
- socket_(peer.ip, peer.port, 2000ms, 2000ms), selfPeerId_(selfPeerId), piecesAvailability_(PeerPiecesAvailability(std::string((tf.pieceHashes.size() + 7) / 8, 0))), terminated_(false),
-  choked_(true), pieceStorage_(pieceStorage), pendingBlock_(false) {}
+PeerConnect::PeerConnect(const Peer& peer, const TorrentFile &tf, std::string selfPeerId, PieceStorage& pieceStorage)
+: tf_(tf),
+  socket_(peer.ip, peer.port, 2000ms, 2000ms), 
+  selfPeerId_(selfPeerId), piecesAvailability_(PeerPiecesAvailability(std::string((tf.pieceHashes.size() + 7) / 8, 0))), 
+  terminated_(false),
+  choked_(true), 
+  pieceStorage_(pieceStorage), 
+  pendingBlock_(false) {}
 
 
 void PeerConnect::Run() {
@@ -54,7 +59,7 @@ void PeerConnect::PerformHandshake() {
     socket_.SendData(data);
     const std::string data_ans = socket_.ReceiveData(68);
 
-    if(data_ans[0] != '\x13' || data_ans.substr(1, 19) != "BitTorrent protocol" || data_ans.substr(28, 20) != tf_.infoHash){
+    if (data_ans[0] != '\x13' || data_ans.substr(1, 19) != "BitTorrent protocol" || data_ans.substr(28, 20) != tf_.infoHash) {
         throw std::runtime_error("Ошибка размера или протокола");
     }
 }
@@ -78,16 +83,17 @@ void PeerConnect::ReceiveBitfield() {
 
     MessageId id = static_cast<MessageId>(data[0]);
 
-    while(id != MessageId::Unchoke){
-        if(id == MessageId::BitField){
+    while (id != MessageId::Unchoke) {
+        if (id == MessageId::BitField) {
             std::string bitfield = data.substr(1, data.size() - 1);
             piecesAvailability_ = PeerPiecesAvailability(bitfield);
         }
-        if(id == MessageId::Have){
+        if (id == MessageId::Have) {
             std::string have = data.substr(1, data.size() - 1);
-            size_t ind = BytesToInt(have);
-            piecesAvailability_.SetPieceAvailability(ind);
+            size_t index = BytesToInt(have);
+            piecesAvailability_.SetPieceAvailability(index);
         }
+
         data = socket_.ReceiveData();
         id = static_cast<MessageId>(data[0]);
     }
@@ -100,11 +106,11 @@ void PeerConnect::SendInterested() {
 }
 
 void PeerConnect::RequestPiece() {
-    size_t cnt = pieceStorage_.TotalPiecesCount();
-    while(cnt--){
-        if (pieceInProgress_ == nullptr)
+    size_t total_pieces_count = pieceStorage_.TotalPiecesCount();
+    while (total_pieces_count--) {
+        if (pieceInProgress_ == nullptr) 
             pieceInProgress_ = pieceStorage_.GetNextPieceToDownload();
-        if(piecesAvailability_.IsPieceAvailable(pieceInProgress_->GetIndex())){
+        if (piecesAvailability_.IsPieceAvailable(pieceInProgress_->GetIndex())) {
             Block* block = pieceInProgress_->FirstMissingBlock();
             Message msg = Message::Init(MessageId::Request, IntToBytes(pieceInProgress_->GetIndex()) + 
             IntToBytes(block->offset) + IntToBytes(block->length));
@@ -136,30 +142,28 @@ void PeerConnect::MainLoop() {
         }
 
         Message msg = Message::Parse(socket_.ReceiveData());
-        if(msg.id == MessageId::Choke){
+        if(msg.id == MessageId::Choke) {
             choked_ = true;
-        }
-        else if(msg.id == MessageId::Unchoke){
+        } else if (msg.id == MessageId::Unchoke) {
             choked_ = false;
-        }
-        else if(msg.id == MessageId::Have){
-            size_t ind = BytesToInt(msg.payload);
-            piecesAvailability_.SetPieceAvailability(ind);
-        }
-        else if(msg.id == MessageId::Piece){
+        } else if (msg.id == MessageId::Have) {
+            size_t index = BytesToInt(msg.payload);
+            piecesAvailability_.SetPieceAvailability(index);
+        } else if (msg.id == MessageId::Piece) {
             pendingBlock_ = false;
-            size_t ind = BytesToInt(msg.payload.substr(0, 4));
+            // size_t index = BytesToInt(msg.payload.substr(0, 4));  
             size_t begin = BytesToInt(msg.payload.substr(4, 4));
             std::string data = msg.payload.substr(8);
 
             pieceInProgress_->SaveBlock(begin, data);
-            if(pieceInProgress_->AllBlocksRetrieved()){
-                if(pieceInProgress_->HashMatches()){
+            if (pieceInProgress_->AllBlocksRetrieved()) {
+                if (pieceInProgress_->HashMatches()) {
                     pieceStorage_.PieceProcessed(pieceInProgress_);
-                    if(pieceStorage_.QueueIsEmpty()) Terminate();
+                    if (pieceStorage_.QueueIsEmpty()) {
+                        Terminate();
+                    }
                     pieceInProgress_ = pieceStorage_.GetNextPieceToDownload();
-                }
-                else{
+                } else{
                     pieceInProgress_->Reset(); // стоит ли делать перевод на след блок
                 }
             }
