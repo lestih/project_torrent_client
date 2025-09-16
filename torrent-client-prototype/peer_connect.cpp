@@ -53,6 +53,10 @@ void PeerConnect::Run() {
     }
 }
 
+// Функция производит handshake.
+// Подключиться к пиру по протоколу TCP
+// Отправить пиру сообщение handshake
+// Проверить правильность ответа пира
 void PeerConnect::PerformHandshake() {
     socket_.EstablishConnection();
     const std::string data = std::string(1, 19) + "BitTorrent protocol00000000" + tf_.infoHash + selfPeerId_; // какой peer передаем
@@ -64,6 +68,10 @@ void PeerConnect::PerformHandshake() {
     }
 }
 
+// Провести handshake
+// Получить bitfield с информацией о наличии у пира различных частей файла
+// Сообщить пиру, что мы готовы получать от него данные (отправить interested)
+// Возвращает true, если все три этапа прошли без ошибок
 bool PeerConnect::EstablishConnection() {
     try {
         PerformHandshake();
@@ -78,6 +86,9 @@ bool PeerConnect::EstablishConnection() {
     }
 }
 
+// Функция читает из сокета bitfield с информацией о наличии у пира различных частей файла.
+// Полученная информация сохраняется в поле `piecesAvailability_`.
+// !!! сообщение bitfield опицаонально, пиры могут сразу слать Unchoke
 void PeerConnect::ReceiveBitfield() {
     std::string data = socket_.ReceiveData();
 
@@ -100,11 +111,15 @@ void PeerConnect::ReceiveBitfield() {
     choked_ = false;
 }
 
+//Функция посылает пиру сообщение типа interested
 void PeerConnect::SendInterested() {
     std::string data = IntToBytes(1) + std::string(1, static_cast<char>(MessageId::Interested));
     this->socket_.SendData(data);
 }
 
+// Функция отправляет пиру сообщение типа request. Это сообщение обозначает запрос части файла у пира.
+// За одно сообщение запрашивается блок размера 2^14 байт
+// Какую часть файла надо скачать запрашиваем у pieceStorage_
 void PeerConnect::RequestPiece() {
     size_t total_pieces_count = pieceStorage_.TotalPiecesCount();
     while (total_pieces_count--) {
@@ -134,9 +149,9 @@ bool PeerConnect::Failed() const {
     return failed_;
 }
 
+// Основной цикл общения с пиром. Здесь ждем следующее сообщение от пира и обрабатываем его.
 void PeerConnect::MainLoop() {
     while (!terminated_) {
-
         if (!choked_ && !pendingBlock_) {
             RequestPiece();
         }
@@ -157,7 +172,8 @@ void PeerConnect::MainLoop() {
 
             pieceInProgress_->SaveBlock(begin, data);
             if (pieceInProgress_->AllBlocksRetrieved()) {
-                if (pieceInProgress_->HashMatches()) {
+
+                if (pieceInProgress_->HashMatches()) {  // если хэши совпадают
                     pieceStorage_.PieceProcessed(pieceInProgress_);
                     if (pieceStorage_.QueueIsEmpty()) {
                         Terminate();
