@@ -1,6 +1,7 @@
 #include "piece_storage.h"
 #include <iostream>
 
+
 PieceStorage::PieceStorage(const TorrentFile& tf, const std::filesystem::path& outputDirectory, size_t count)
 : pieces_cnt(count),
   outputDirectory_(outputDirectory), 
