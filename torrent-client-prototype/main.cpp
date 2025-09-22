@@ -1,7 +1,7 @@
-#include "torrent_tracker.h"
-#include "piece_storage.h"
-#include "peer_connect.h"
-#include "byte_tools.h"
+#include "network/torrent_tracker.h"
+#include "piece_storage/piece_storage.h"
+#include "network/peer_connect.h"
+#include "utils/byte_tools.h"
 #include <cassert>
 #include <iostream>
 #include <filesystem>
@@ -39,6 +39,9 @@ void CheckDownloadedPiecesIntegrity(const std::filesystem::path& outputFilename,
         throw std::runtime_error("Cannot determine real amount of saved pieces");
     }
 
+    // std::cout << (PiecesToDownload * procent) / 100 << std::endl;
+    // std::cout << PiecesToDownload << std::endl;
+    // std::cout << pieces.PiecesSavedToDiscCount()<< std::endl;
     if (pieces.PiecesSavedToDiscCount() < PiecesToDownload) {
         throw std::runtime_error("Downloaded pieces amount is not enough");
     }

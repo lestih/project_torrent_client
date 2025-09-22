@@ -1,0 +1,230 @@
+[
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/main.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/main.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/main.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/main.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/parsing/bencode.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/parsing/bencode.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/parsing/bencode.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/parsing/bencode.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/parsing/torrent_file.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/parsing/torrent_file.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/parsing/torrent_file.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/parsing/torrent_file.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/piece_storage/piece_storage.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/piece_storage/piece_storage.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/piece_storage/piece_storage.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/piece_storage/piece_storage.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/piece_storage/piece.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/piece_storage/piece.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/piece_storage/piece.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/piece_storage/piece.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/network/peer_connect.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/network/peer_connect.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/network/peer_connect.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/network/peer_connect.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/network/tcp_connect.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/network/tcp_connect.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/network/tcp_connect.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/network/tcp_connect.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/network/torrent_tracker.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/network/torrent_tracker.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/network/torrent_tracker.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/network/torrent_tracker.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/network/message.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/network/message.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/network/message.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/network/message.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build",
+  "command": "/usr/bin/g++  -I/home/lestih/projects/project_torrent_client/torrent-client-prototype -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes -g -std=c++20 -fsanitize=thread -o CMakeFiles/torrent-client-prototype.dir/utils/byte_tools.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/utils/byte_tools.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/utils/byte_tools.cpp",
+  "output": "CMakeFiles/torrent-client-prototype.dir/utils/byte_tools.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/accept_encoding.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/accept_encoding.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/accept_encoding.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/accept_encoding.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/async.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/async.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/async.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/async.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/auth.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/auth.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/auth.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/auth.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/bearer.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/bearer.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/bearer.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/bearer.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/callback.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/callback.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/callback.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/callback.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/cert_info.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/cert_info.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/cert_info.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/cert_info.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/cookies.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/cookies.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/cookies.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/cookies.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/cprtypes.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/cprtypes.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/cprtypes.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/cprtypes.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/curl_container.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/curl_container.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/curl_container.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/curl_container.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/curlholder.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/curlholder.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/curlholder.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/curlholder.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/error.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/error.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/error.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/error.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/file.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/file.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/file.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/file.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/multipart.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/multipart.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/multipart.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/multipart.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/parameters.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/parameters.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/parameters.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/parameters.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/payload.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/payload.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/payload.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/payload.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/proxies.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/proxies.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/proxies.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/proxies.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/proxyauth.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/proxyauth.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/proxyauth.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/proxyauth.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/session.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/session.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/session.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/session.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/threadpool.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/threadpool.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/threadpool.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/threadpool.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/timeout.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/timeout.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/timeout.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/timeout.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/unix_socket.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/unix_socket.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/unix_socket.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/unix_socket.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/util.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/util.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/util.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/util.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/response.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/response.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/response.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/response.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/redirect.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/redirect.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/redirect.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/redirect.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/interceptor.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/interceptor.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/interceptor.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/interceptor.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/ssl_ctx.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/ssl_ctx.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/ssl_ctx.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/ssl_ctx.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/curlmultiholder.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/curlmultiholder.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/curlmultiholder.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/curlmultiholder.cpp.o"
+},
+{
+  "directory": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr",
+  "command": "/usr/bin/g++ -DCPR_ENABLE_CURL_HTTP_ONLY -DCPR_ENABLE_SSL -DCPR_USE_SYSTEM_CURL -DOPENSSL_BACKEND_USED -Dcpr_EXPORTS -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/include -I/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-build/cpr_generated_includes  -Wall -Wextra -Wpedantic -Werror -g -std=c++20 -fPIC -fsanitize=thread -o CMakeFiles/cpr.dir/multiperform.cpp.o -c /home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/multiperform.cpp",
+  "file": "/home/lestih/projects/project_torrent_client/torrent-client-prototype/build/_deps/cpr-src/cpr/multiperform.cpp",
+  "output": "_deps/cpr-build/cpr/CMakeFiles/cpr.dir/multiperform.cpp.o"
+}
+]
